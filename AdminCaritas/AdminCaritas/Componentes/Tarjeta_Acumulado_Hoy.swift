@@ -1,15 +1,14 @@
 //
-//  Tarjeta_Acumulado.swift
-//  Reto
+//  Tarjeta_Acumulado_Hoy.swift
+//  AdminCaritas
 //
-//  Created by Jimena Gallegos on 13/10/23.
+//  Created by Alumno on 07/11/23.
 //
 
 import SwiftUI
 
-struct Tarjeta_Acumulado: View {
-
-    let totalCantidad = 100.0 /*listaRecibos
+struct Tarjeta_Acumulado_Hoy: View {
+    let totalCantidad = 1500.0 /*listaRecibos
             .filter { $0.Estatus == "Cobrado"}
             .reduce(0) { (result, recibo) in
                 return result + recibo.Importe
@@ -19,12 +18,12 @@ struct Tarjeta_Acumulado: View {
         VStack{
             ZStack{
                 RoundedRectangle(cornerRadius: 10)
-                    .frame(width: 160, height: 90)
+                    .frame(width: 250, height: 90)
                     .foregroundColor(Color(red: 0.95, green: 0.95, blue: 0.96))
                     .shadow(color: .gray, radius: 3, x: 0, y: 2)
                 
                 VStack{
-                    Text("Acumulado ")
+                    Text("Acumulado Hoy")
                         .fontWeight(.semibold)
                         .foregroundColor(Color.gray)
                     
@@ -39,9 +38,8 @@ struct Tarjeta_Acumulado: View {
     }
 }
 
-
-struct Tarjeta_Acumulado_Previews: PreviewProvider {
+struct Tarjeta_Acumulado_Hoy_Previews: PreviewProvider {
     static var previews: some View {
-        Tarjeta_Acumulado()
+        Tarjeta_Acumulado_Hoy()
     }
 }
