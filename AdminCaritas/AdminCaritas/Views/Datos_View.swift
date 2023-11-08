@@ -6,10 +6,29 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct Datos_View: View {
+    let date = Date()
+    let df = DateFormatter()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Header()
+            HStack{
+                Text("Recolectado")
+                    .bold()
+                    .font(.largeTitle)
+                Spacer()
+                Text("\(date.formatted(.dateTime.day().month().year().hour().minute()))")
+                    .foregroundColor(.gray)
+                Spacer()
+            }
+            ChartView()
+            Tarjeta_Esperado()
+            Tarjeta_Acumulado_Hoy()
+            Spacer()
+        }
+        .padding()
     }
 }
 

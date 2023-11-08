@@ -25,6 +25,9 @@
 		FB90F5D92AFAF96000B2943A /* Repartidores.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB90F5D52AFAF96000B2943A /* Repartidores.swift */; };
 		FB90F5DA2AFAF96000B2943A /* Repartidores_Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB90F5D62AFAF96000B2943A /* Repartidores_Data.swift */; };
 		FB90F5DB2AFAF96000B2943A /* Recibos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB90F5D72AFAF96000B2943A /* Recibos.swift */; };
+		FB90F5DD2AFB000900B2943A /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB90F5DC2AFB000900B2943A /* ChartView.swift */; };
+		FB90F5DF2AFB058100B2943A /* Tarjeta_Acumulado_Hoy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB90F5DE2AFB058100B2943A /* Tarjeta_Acumulado_Hoy.swift */; };
+		FB90F5E12AFB059F00B2943A /* Tarjeta_Esperado.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB90F5E02AFB059F00B2943A /* Tarjeta_Esperado.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		FB90F5D52AFAF96000B2943A /* Repartidores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repartidores.swift; sourceTree = "<group>"; };
 		FB90F5D62AFAF96000B2943A /* Repartidores_Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repartidores_Data.swift; sourceTree = "<group>"; };
 		FB90F5D72AFAF96000B2943A /* Recibos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recibos.swift; sourceTree = "<group>"; };
+		FB90F5DC2AFB000900B2943A /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		FB90F5DE2AFB058100B2943A /* Tarjeta_Acumulado_Hoy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tarjeta_Acumulado_Hoy.swift; sourceTree = "<group>"; };
+		FB90F5E02AFB059F00B2943A /* Tarjeta_Esperado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tarjeta_Esperado.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,8 @@
 				FB90F5C32AFAF78500B2943A /* Recibos_Lista.swift */,
 				FB90F5C42AFAF78500B2943A /* Mapa.swift */,
 				FB90F5C52AFAF78500B2943A /* Tarjeta_Nombre_Amarilla.swift */,
+				FB90F5DE2AFB058100B2943A /* Tarjeta_Acumulado_Hoy.swift */,
+				FB90F5E02AFB059F00B2943A /* Tarjeta_Esperado.swift */,
 			);
 			path = Componentes;
 			sourceTree = "<group>";
@@ -117,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				FB90F5CF2AFAF8D500B2943A /* Datos_View.swift */,
+				FB90F5DC2AFB000900B2943A /* ChartView.swift */,
 				FB90F5D12AFAF91400B2943A /* Lista_Recolectores_View.swift */,
 			);
 			path = Views;
@@ -211,11 +220,14 @@
 				FB90F5B22AFAF70700B2943A /* ContentView.swift in Sources */,
 				FB90F5B02AFAF70700B2943A /* AdminCaritasApp.swift in Sources */,
 				FB90F5C72AFAF78500B2943A /* Tarjeta_Nombre_Verde.swift in Sources */,
+				FB90F5E12AFB059F00B2943A /* Tarjeta_Esperado.swift in Sources */,
 				FB90F5D92AFAF96000B2943A /* Repartidores.swift in Sources */,
 				FB90F5C92AFAF78500B2943A /* Header.swift in Sources */,
+				FB90F5DD2AFB000900B2943A /* ChartView.swift in Sources */,
 				FB90F5CD2AFAF78500B2943A /* Tarjeta_Nombre_Amarilla.swift in Sources */,
 				FB90F5CA2AFAF78500B2943A /* Tarjeta_Status.swift in Sources */,
 				FB90F5C82AFAF78500B2943A /* Tarjeta_Acumulado.swift in Sources */,
+				FB90F5DF2AFB058100B2943A /* Tarjeta_Acumulado_Hoy.swift in Sources */,
 				FB90F5D02AFAF8D500B2943A /* Datos_View.swift in Sources */,
 				FB90F5D82AFAF96000B2943A /* LogIn.swift in Sources */,
 				FB90F5DB2AFAF96000B2943A /* Recibos.swift in Sources */,
