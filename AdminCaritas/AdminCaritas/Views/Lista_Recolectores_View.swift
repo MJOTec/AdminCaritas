@@ -8,10 +8,23 @@
 import SwiftUI
 
 struct Lista_Recolectores_View: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            Header()
+                .offset(y: -35)
+            VStack{
+                Text("Recolectores")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .frame(width: 350, alignment: .leading)
+    
+                    
+                }
+            }
+        }
     }
-}
+
 
 struct Lista_Recolectores_View_Previews: PreviewProvider {
     static var previews: some View {
