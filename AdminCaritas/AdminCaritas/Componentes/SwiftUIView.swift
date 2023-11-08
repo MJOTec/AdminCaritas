@@ -13,15 +13,18 @@ struct SwiftUIView: View {
     var body: some View {
         VStack{
             ZStack{
-                Tarjeta_Nombre_Amarilla()
-                //Tarjeta_Nombre_Verde()
+                if recolector.estado == "No Entregado" {
+                    Tarjeta_Nombre_Amarillo()
+                } else {
+                    Tarjeta_Nombre_Verde2()
+                }
                 
                 Text("\(recolector.nombre) \(recolector.apellidos)")
                     .font(.title)
                     .offset( x: -40,y: -20)
                 
                 Text("\(recolector.estado)")
-                    .offset( x: -60 ,y: 20)
+                    .offset( x: -60 ,y: 18)
                     
                       
                 

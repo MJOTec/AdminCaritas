@@ -12,16 +12,22 @@ struct Lista_Recolectores_View: View {
     var body: some View {
         NavigationStack{
             Header()
-                .offset(y: -35)
+            
+            
             VStack{
                 Text("Recolectores")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .frame(width: 350, alignment: .leading)
-    
+                
+                List(listaRepartidores.sorted{ $0.estado == "No Entregado" && $1.estado != "No Entregado" }){Repartidor in SwiftUIView(recolector: Repartidor)
                     
-                }
+                }.listStyle(InsetListStyle())
+                
+                
+            }.padding()
             }
+        
         }
     }
 
