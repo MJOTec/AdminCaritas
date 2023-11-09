@@ -8,10 +8,29 @@
 import SwiftUI
 
 struct Lista_Recolectores_View: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            Header()
+            
+            
+            VStack{
+                Text("Recolectores")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .frame(width: 350, alignment: .leading)
+                
+                List(listaRepartidores.sorted{ $0.estado == "No Entregado" && $1.estado != "No Entregado" }){Repartidor in SwiftUIView(recolector: Repartidor)
+                    
+                }.listStyle(InsetListStyle())
+                
+                
+            }.padding()
+            }
+        
+        }
     }
-}
+
 
 struct Lista_Recolectores_View_Previews: PreviewProvider {
     static var previews: some View {

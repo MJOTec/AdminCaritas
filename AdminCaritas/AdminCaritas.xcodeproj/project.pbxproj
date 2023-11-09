@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB00857C2AFB2A5100B7392E /* Tarjeta_Nombre_Amarillo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB00857B2AFB2A5100B7392E /* Tarjeta_Nombre_Amarillo.swift */; };
+		FB00857E2AFB2BBB00B7392E /* Tarjeta_Nombre_Verde2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB00857D2AFB2BBB00B7392E /* Tarjeta_Nombre_Verde2.swift */; };
 		FB90F5B02AFAF70700B2943A /* AdminCaritasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB90F5AF2AFAF70700B2943A /* AdminCaritasApp.swift */; };
 		FB90F5B22AFAF70700B2943A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB90F5B12AFAF70700B2943A /* ContentView.swift */; };
 		FB90F5B42AFAF70900B2943A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB90F5B32AFAF70900B2943A /* Assets.xcassets */; };
@@ -28,9 +30,12 @@
 		FB90F5DD2AFB000900B2943A /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB90F5DC2AFB000900B2943A /* ChartView.swift */; };
 		FB90F5DF2AFB058100B2943A /* Tarjeta_Acumulado_Hoy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB90F5DE2AFB058100B2943A /* Tarjeta_Acumulado_Hoy.swift */; };
 		FB90F5E12AFB059F00B2943A /* Tarjeta_Esperado.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB90F5E02AFB059F00B2943A /* Tarjeta_Esperado.swift */; };
+		FBB21FEE2AFB179000EA809F /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB21FED2AFB179000EA809F /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB00857B2AFB2A5100B7392E /* Tarjeta_Nombre_Amarillo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tarjeta_Nombre_Amarillo.swift; sourceTree = "<group>"; };
+		FB00857D2AFB2BBB00B7392E /* Tarjeta_Nombre_Verde2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tarjeta_Nombre_Verde2.swift; sourceTree = "<group>"; };
 		FB90F5AC2AFAF70700B2943A /* AdminCaritas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdminCaritas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB90F5AF2AFAF70700B2943A /* AdminCaritasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminCaritasApp.swift; sourceTree = "<group>"; };
 		FB90F5B12AFAF70700B2943A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +58,7 @@
 		FB90F5DC2AFB000900B2943A /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		FB90F5DE2AFB058100B2943A /* Tarjeta_Acumulado_Hoy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tarjeta_Acumulado_Hoy.swift; sourceTree = "<group>"; };
 		FB90F5E02AFB059F00B2943A /* Tarjeta_Esperado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tarjeta_Esperado.swift; sourceTree = "<group>"; };
+		FBB21FED2AFB179000EA809F /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,14 +115,17 @@
 			children = (
 				FB90F5BE2AFAF78500B2943A /* Tarjeta_Nombre_Rojo.swift */,
 				FB90F5BF2AFAF78500B2943A /* Tarjeta_Nombre_Verde.swift */,
+				FB00857D2AFB2BBB00B7392E /* Tarjeta_Nombre_Verde2.swift */,
 				FB90F5C02AFAF78500B2943A /* Tarjeta_Acumulado.swift */,
 				FB90F5C12AFAF78500B2943A /* Header.swift */,
 				FB90F5C22AFAF78500B2943A /* Tarjeta_Status.swift */,
 				FB90F5C32AFAF78500B2943A /* Recibos_Lista.swift */,
 				FB90F5C42AFAF78500B2943A /* Mapa.swift */,
 				FB90F5C52AFAF78500B2943A /* Tarjeta_Nombre_Amarilla.swift */,
+				FB00857B2AFB2A5100B7392E /* Tarjeta_Nombre_Amarillo.swift */,
 				FB90F5DE2AFB058100B2943A /* Tarjeta_Acumulado_Hoy.swift */,
 				FB90F5E02AFB059F00B2943A /* Tarjeta_Esperado.swift */,
+				FBB21FED2AFB179000EA809F /* SwiftUIView.swift */,
 			);
 			path = Componentes;
 			sourceTree = "<group>";
@@ -220,12 +229,15 @@
 				FB90F5B22AFAF70700B2943A /* ContentView.swift in Sources */,
 				FB90F5B02AFAF70700B2943A /* AdminCaritasApp.swift in Sources */,
 				FB90F5C72AFAF78500B2943A /* Tarjeta_Nombre_Verde.swift in Sources */,
+				FB00857E2AFB2BBB00B7392E /* Tarjeta_Nombre_Verde2.swift in Sources */,
 				FB90F5E12AFB059F00B2943A /* Tarjeta_Esperado.swift in Sources */,
 				FB90F5D92AFAF96000B2943A /* Repartidores.swift in Sources */,
 				FB90F5C92AFAF78500B2943A /* Header.swift in Sources */,
 				FB90F5DD2AFB000900B2943A /* ChartView.swift in Sources */,
 				FB90F5CD2AFAF78500B2943A /* Tarjeta_Nombre_Amarilla.swift in Sources */,
 				FB90F5CA2AFAF78500B2943A /* Tarjeta_Status.swift in Sources */,
+				FBB21FEE2AFB179000EA809F /* SwiftUIView.swift in Sources */,
+				FB00857C2AFB2A5100B7392E /* Tarjeta_Nombre_Amarillo.swift in Sources */,
 				FB90F5C82AFAF78500B2943A /* Tarjeta_Acumulado.swift in Sources */,
 				FB90F5DF2AFB058100B2943A /* Tarjeta_Acumulado_Hoy.swift in Sources */,
 				FB90F5D02AFAF8D500B2943A /* Datos_View.swift in Sources */,
