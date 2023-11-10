@@ -25,7 +25,7 @@ struct Tarjeta_Nombre_Amarillo: View {
                     
                     Circle()
                         .padding(.top, 33)
-                        .frame(width: 30)
+                        .frame(width: 20)
                         .foregroundColor(amarilloOscuro)
                     
                     

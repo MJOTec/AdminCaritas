@@ -20,9 +20,16 @@ struct Lista_Recolectores_View: View {
                     .fontWeight(.bold)
                     .frame(width: 350, alignment: .leading)
                 
-                List(listaRepartidores.sorted{ $0.estado == "No Entregado" && $1.estado != "No Entregado" }){Repartidor in SwiftUIView(recolector: Repartidor)
-                    
+                List(listaRepartidores.sorted{ $0.estado == "No Entregado" && $1.estado != "No Entregado" }) { Repartidor in
+                    /*NavigationLink(destination: KenyuView(recolector: Repartidor)) {
+                        SwiftUIView(recolector: Repartidor)
+                    }*/
+                    NavigationLink(destination: KenyuView()){
+                        SwiftUIView(recolector: Repartidor)
+                    }
                 }.listStyle(InsetListStyle())
+                    
+                
                 
                 
             }.padding()

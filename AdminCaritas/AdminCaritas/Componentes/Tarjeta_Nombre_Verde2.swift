@@ -23,7 +23,7 @@ struct Tarjeta_Nombre_Verde2: View {
                     Spacer()
                     Circle()
                         .padding(.top, 33)
-                        .frame(width: 30)
+                        .frame(width: 20)
                         .foregroundColor(verdeOscuro)
                     
                     
