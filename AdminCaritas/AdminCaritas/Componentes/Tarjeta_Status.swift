@@ -22,7 +22,7 @@ struct Tarjeta_Status: View {
                         .fontWeight(.semibold)
                         .foregroundColor(Color.gray)
                     
-                    Text("\(repatidor.estado)")
+                    Text("\(repatidor.EstadoEntrega)")
                         .font(.title2)
                         .fontWeight(.semibold)
                         .foregroundColor(Color(hue: 0.564, saturation: 0.106, brightness: 0.217))
@@ -34,7 +34,7 @@ struct Tarjeta_Status: View {
 
 struct Tarjeta_Status_Previews: PreviewProvider {
     static var previews: some View {
-        var rep1: Repartidores = listaRepartidores[1]
-        Tarjeta_Status(repatidor: rep1)
+        var repartidor = listaRepartidores[0]
+        Tarjeta_Status(repatidor: repartidor)
     }
 }

@@ -13,13 +13,13 @@ struct SwiftUIView: View {
     var body: some View {
         VStack{
             ZStack{
-                if recolector.estado == "No Entregado" {
+                if recolector.EstadoEntrega == "No Entregado" {
                     Tarjeta_Nombre_Amarillo()
                 } else {
                     Tarjeta_Nombre_Verde2()
                 }
                 
-                Text("\(recolector.nombre) \(recolector.apellidos)")
+                Text("\(recolector.Nombre) \(recolector.ApellidoPaterno)")
 
                     .font(.title2)
                     .fontWeight(.bold)
@@ -28,7 +28,7 @@ struct SwiftUIView: View {
                     
                 
                 
-                Text("\(recolector.estado)")
+                Text("\(recolector.EstadoEntrega)")
                     .fontWeight(.semibold)
                     .foregroundColor(Color.gray)
                     .padding(.leading, -130)
@@ -43,7 +43,7 @@ struct SwiftUIView: View {
 }
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        var recolector1: Repartidores = listaRepartidores[2]
+        var recolector1 = listaRepartidores[0]
         SwiftUIView(recolector: recolector1)
     }
 }
