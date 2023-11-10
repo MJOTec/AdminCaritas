@@ -36,7 +36,7 @@ struct KenyuView: View {
             Spacer(minLength:1)
             HStack(alignment: .top, spacing: 15){
                 Tarjeta_Acumulado()
-                Status_Admin()
+                //Status_Admin()
             }
         }.padding()
     }

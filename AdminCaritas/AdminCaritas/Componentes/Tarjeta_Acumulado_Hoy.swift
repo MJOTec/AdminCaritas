@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct Tarjeta_Acumulado_Hoy: View {
-    let totalCantidad = 1500.0 /*listaRecibos
-            .filter { $0.Estatus == "Cobrado"}
-            .reduce(0) { (result, recibo) in
-                return result + recibo.Importe
-            }*/
+    @State var totalCobrado: Float = 0.0
     
     var body: some View {
         VStack{
@@ -27,7 +23,7 @@ struct Tarjeta_Acumulado_Hoy: View {
                         .fontWeight(.semibold)
                         .foregroundColor(Color.gray)
                     
-                    Text("$\(totalCantidad, specifier: "%.2f")")
+                    Text("$\(totalCobrado, specifier: "%.2f")")
                         .font(.title)
                         .fontWeight(.semibold)
                         .foregroundColor(Color(red: 0.03, green: 0.347, blue: 0.545))
@@ -35,7 +31,24 @@ struct Tarjeta_Acumulado_Hoy: View {
                 }
             }
         }
+        .onAppear(){
+            totalCobrado = getTotalDineroCobrado()
+        }
     }
+    
+    func getTotalDineroCobrado() -> Float {
+        let listaRecibosEstatus = getRecibosEstatus()
+        let total: Float
+        total = listaRecibosEstatus.reduce(0) { (result, recibosEstatus) in
+            if recibosEstatus.Estatus == "Cobrado" {
+                return result + (recibosEstatus.Total)
+            } else {
+                return result
+            }
+        }
+        return total
+    }
+
 }
 
 struct Tarjeta_Acumulado_Hoy_Previews: PreviewProvider {
