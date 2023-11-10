@@ -20,11 +20,20 @@ struct SwiftUIView: View {
                 }
                 
                 Text("\(recolector.nombre) \(recolector.apellidos)")
-                    .font(.title)
-                    .offset( x: -40,y: -20)
+
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .offset(x: 15, y: -18)
+                    .frame(width: 310, height: 28, alignment: .leading)
+                    
+                
                 
                 Text("\(recolector.estado)")
-                    .offset( x: -60 ,y: 18)
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color.gray)
+                    .padding(.leading, -130)
+                    .padding(.top, 33)
+                    
                     
                       
                 
@@ -34,7 +43,7 @@ struct SwiftUIView: View {
 }
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        var recolector1: Repartidores = listaRepartidores[0]
+        var recolector1: Repartidores = listaRepartidores[2]
         SwiftUIView(recolector: recolector1)
     }
 }
