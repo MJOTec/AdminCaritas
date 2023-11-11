@@ -14,36 +14,6 @@ struct ToyShape: Identifiable {
     var count: Double
     var id = UUID()
 }
-/*
- struct ChartView: View {
- var stackedBarData: [ToyShape] = [
- .init(color: "yellow", type: "Pendiente", count: 2),
- .init(color: "green", type: "Cobrado", count: 2),
- .init(color: "red", type: "Pospuesto", count: 2),
- 
- ]
- var body: some View {
- Chart {
- ForEach(stackedBarData) { shape in
- BarMark(
- x: .value("Total Count", shape.count)
- )
- .foregroundStyle(by: .value("Shape Color", shape.color))
- }
- }
- .chartForegroundStyleScale([
- "red": .red, "green": .green, "yellow": .yellow
- ])
- .frame(height: 100)
- }
- }
- 
- struct ChartView_Previews: PreviewProvider {
- static var previews: some View {
- ChartView()
- }
- }
- */
 
 struct PieChartCell: Shape {
     let startAngle: Angle

@@ -11,7 +11,7 @@ struct Lista_Recolectores_View: View {
     @State var listaRecolectores: Array<Repartidores> = []
     
     var body: some View {
-       
+        
         NavigationStack{
             Header()
             VStack{
@@ -20,23 +20,21 @@ struct Lista_Recolectores_View: View {
                     .fontWeight(.bold)
                     .frame(width: 350, alignment: .leading)
                 VStack{
-                    List(listaRecolectores{ Repartidor in
-                        /*NavigationLink(destination: KenyuView(recolector: Repartidor)) {
-                         SwiftUIView(recolector: Repartidor)
-                         }*/
-                        NavigationLink(destination: KenyuView()){
-                            SwiftUIView(recolector: Repartidor)
+                    List{
+                        ForEach(listaRecolectores) { recolectores in
+                            NavigationLink(destination: KenyuView()){
+                                SwiftUIView(recolector: recolectores)
+                            }
                         }
                     }.listStyle(InsetListStyle())
                     Spacer()
-                        
-                    
                 }
-                        .onAppear(){
-                            listaRecolectores = getRepartidores()
-                        }
+                .onAppear(){
+                    listaRecolectores = getRepartidores()
+                }
                 
-            }.padding()
+            }
+            .padding()
         }
         
     }

@@ -10,7 +10,6 @@ import SwiftUI
 struct KenyuView: View {
     let date = Date()
     let df = DateFormatter()
-
     
     var body: some View {
         VStack{
@@ -22,8 +21,8 @@ struct KenyuView: View {
             HStack{
                 Text("   Ruta actual   ")
                     .overlay(RoundedRectangle(cornerRadius: 30)
-                                    .stroke(Color(red: 0.95, green: 0.95, blue: 0.96), lineWidth: 5)
-                            )
+                        .stroke(Color(red: 0.95, green: 0.95, blue: 0.96), lineWidth: 5)
+                    )
                     .background(Color(red: 0.95, green: 0.95, blue: 0.96))
                     .padding(.leading)
                     .foregroundColor(Color(hue: 0.564, saturation: 0.106, brightness: 0.317))
@@ -35,7 +34,7 @@ struct KenyuView: View {
             //Recibos_Pendientes_Lista()
             Spacer(minLength:1)
             HStack(alignment: .top, spacing: 15){
-                Tarjeta_Acumulado()
+                Tarjeta_Acumulado_Reco()
                 //Status_Admin()
             }
         }.padding()

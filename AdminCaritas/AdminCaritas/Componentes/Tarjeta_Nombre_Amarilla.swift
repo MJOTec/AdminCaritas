@@ -11,7 +11,6 @@ struct Tarjeta_Nombre_Amarilla: View {
     let amarilloOscuro = Color(red: 0.92, green: 0.93, blue: 0.49)
     let amarilloClaro = Color(red: 0.92, green: 0.93, blue: 0.49)
     
-    
     var body: some View {
         VStack{
             ZStack{
@@ -19,7 +18,7 @@ struct Tarjeta_Nombre_Amarilla: View {
                     .frame(width: 333, height: 90)
                     .foregroundColor(Color(red: 0.95, green: 0.95, blue: 0.96))
                     .shadow(color: .gray, radius: 3, x: 0, y: 2)
-
+                
                 HStack{
                     Spacer()
                     
@@ -36,7 +35,7 @@ struct Tarjeta_Nombre_Amarilla: View {
                     Rectangle()
                         .frame(width: 13, height: 90)
                         .foregroundColor(amarilloClaro)
-
+                    
                     Rectangle()
                         .frame(width: 20, height: 90)
                         .foregroundColor(amarilloOscuro)
@@ -46,7 +45,7 @@ struct Tarjeta_Nombre_Amarilla: View {
             .frame(width: 300)
             
         }
-        }
+    }
 }
 
 struct Tarjeta_Nombre_Amarilla_Previews: PreviewProvider {

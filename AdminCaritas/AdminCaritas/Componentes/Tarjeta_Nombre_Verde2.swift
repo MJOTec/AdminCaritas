@@ -39,14 +39,14 @@ struct Tarjeta_Nombre_Verde2: View {
                         .frame(width: 20, height: 90)
                         .foregroundColor(verdeOscuro)
                     Spacer()
-                    }
                 }
-                .frame(width: 300)
-                
             }
+            .frame(width: 300)
+            
         }
     }
-    
+}
+
 
 struct Tarjeta_Nombre_Verde2_Previews: PreviewProvider {
     static var previews: some View {

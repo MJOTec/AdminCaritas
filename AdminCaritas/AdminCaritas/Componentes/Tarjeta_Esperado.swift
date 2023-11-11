@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Tarjeta_Esperado: View {
     @State var totalCantidad: Float = 0.0
-
+    
     var body: some View {
         VStack {
             ZStack {
@@ -17,12 +17,12 @@ struct Tarjeta_Esperado: View {
                     .frame(width: 250, height: 90)
                     .foregroundColor(Color(red: 0.95, green: 0.95, blue: 0.96))
                     .shadow(color: .gray, radius: 3, x: 0, y: 2)
-
+                
                 VStack {
                     Text("Esperado")
                         .fontWeight(.semibold)
                         .foregroundColor(Color.gray)
-
+                    
                     Text("$\(totalCantidad, specifier: "%.2f")")
                         .font(.title)
                         .fontWeight(.semibold)
@@ -34,14 +34,14 @@ struct Tarjeta_Esperado: View {
             totalCantidad = getTotalDineroEsperado()
         }
     }
-
+    
     func getTotalDineroEsperado() -> Float {
         let listaRecibosEstatus = getRecibosEstatus()
-
+        
         let total = listaRecibosEstatus.reduce(0) { (result, recibosEstatus) in
             return result + Float(recibosEstatus.Total)
         }
-
+        
         return total
     }
 }

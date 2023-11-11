@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-    
+
 struct SwiftUIView: View {
     var recolector: Repartidores
     
@@ -20,12 +20,12 @@ struct SwiftUIView: View {
                 }
                 
                 Text("\(recolector.Nombre) \(recolector.ApellidoPaterno)")
-
+                
                     .font(.title2)
                     .fontWeight(.bold)
                     .offset(x: 15, y: -18)
                     .frame(width: 310, height: 28, alignment: .leading)
-                    
+                
                 
                 
                 Text("\(recolector.EstadoEntrega)")
@@ -33,9 +33,9 @@ struct SwiftUIView: View {
                     .foregroundColor(Color.gray)
                     .padding(.leading, -130)
                     .padding(.top, 33)
-                    
-                    
-                      
+                
+                
+                
                 
             }
         }

@@ -43,13 +43,13 @@ struct Tarjeta_Nombre_Roja: View {
                 }
             }
             .frame(width: 300)
-                
-            }
+            
         }
     }
-    
-    struct Tarjeta_Nombre_Roja_Previews: PreviewProvider {
-        static var previews: some View {
-            Tarjeta_Nombre_Roja()
-        }
+}
+
+struct Tarjeta_Nombre_Roja_Previews: PreviewProvider {
+    static var previews: some View {
+        Tarjeta_Nombre_Roja()
     }
+}
