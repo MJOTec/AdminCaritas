@@ -40,17 +40,17 @@ struct Tarjeta_Nombre_Verde: View {
                         .frame(width: 20, height: 90)
                         .foregroundColor(verdeOscuro)
                     Spacer()
-                    }
                 }
-                .frame(width: 300)
-                
             }
+            .frame(width: 300)
+            
         }
     }
-    
-    struct Tarjeta_Nombre_Verde_Previews: PreviewProvider {
-        static var previews: some View {
-            Tarjeta_Nombre_Verde()
-        }
+}
+
+struct Tarjeta_Nombre_Verde_Previews: PreviewProvider {
+    static var previews: some View {
+        Tarjeta_Nombre_Verde()
     }
+}
 

@@ -1,13 +1,19 @@
 //
-//  Tarjeta_Status.swift
+//  Tarjeta_Acumulado.swift
 //  Reto
 //
 //  Created by Jimena Gallegos on 13/10/23.
 //
 
 import SwiftUI
-struct Tarjeta_Status: View {
-    @State var repatidor: Repartidores
+
+struct Tarjeta_Acumulado_Reco: View {
+
+    let totalCantidad = 100.0 /*listaRecibos
+            .filter { $0.Estatus == "Cobrado"}
+            .reduce(0) { (result, recibo) in
+                return result + recibo.Importe
+            }*/
     
     var body: some View {
         VStack{
@@ -18,23 +24,24 @@ struct Tarjeta_Status: View {
                     .shadow(color: .gray, radius: 3, x: 0, y: 2)
                 
                 VStack{
-                    Text("Status ")
+                    Text("Acumulado ")
                         .fontWeight(.semibold)
                         .foregroundColor(Color.gray)
                     
-                    Text("\(repatidor.EstadoEntrega)")
-                        .font(.title2)
+                    Text("$\(totalCantidad, specifier: "%.2f")")
+                        .font(.title)
                         .fontWeight(.semibold)
-                        .foregroundColor(Color(hue: 0.564, saturation: 0.106, brightness: 0.217))
+                        .foregroundColor(Color(red: 0.03, green: 0.347, blue: 0.545))
+                     
                 }
             }
         }
     }
 }
 
-struct Tarjeta_Status_Previews: PreviewProvider {
+
+struct Tarjeta_Acumulado_Reco_Previews: PreviewProvider {
     static var previews: some View {
-        var repartidor = listaRepartidores[0]
-        Tarjeta_Status(repatidor: repartidor)
+        Tarjeta_Acumulado_Reco()
     }
 }

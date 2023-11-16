@@ -8,35 +8,39 @@
 import SwiftUI
 
 struct Lista_Recolectores_View: View {
+    @State var listaRecolectores: Array<Repartidores> = []
     
     var body: some View {
+        
         NavigationStack{
             Header()
-            
-            
             VStack{
                 Text("Recolectores")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .frame(width: 350, alignment: .leading)
+                VStack{
+                    List{
+                        ForEach(listaRecolectores) { recolectores in
+                            NavigationLink(destination: KenyuView()){
+                                SwiftUIView(recolector: recolectores)
+                            }
+                        }
+                    }.listStyle(InsetListStyle())
+                    Spacer()
+                }
+                .onAppear(){
+                    listaRecolectores = getRepartidores()
+                }
                 
-                List(listaRepartidores.sorted{ $0.estado == "No Entregado" && $1.estado != "No Entregado" }) { Repartidor in
-                    /*NavigationLink(destination: KenyuView(recolector: Repartidor)) {
-                        SwiftUIView(recolector: Repartidor)
-                    }*/
-                    NavigationLink(destination: KenyuView()){
-                        SwiftUIView(recolector: Repartidor)
-                    }
-                }.listStyle(InsetListStyle())
-                    
-                
-                
-                
-            }.padding()
             }
-        
+            .padding()
         }
+        
     }
+    
+    
+}
 
 
 struct Lista_Recolectores_View_Previews: PreviewProvider {

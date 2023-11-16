@@ -19,7 +19,7 @@ struct Tarjeta_Nombre_Amarillo: View {
                     .frame(width: 333, height: 90)
                     .foregroundColor(Color(red: 0.95, green: 0.95, blue: 0.96))
                     .shadow(color: .gray, radius: 3, x: 0, y: 2)
-
+                
                 HStack{
                     Spacer()
                     
@@ -36,7 +36,7 @@ struct Tarjeta_Nombre_Amarillo: View {
                     Rectangle()
                         .frame(width: 13, height: 90)
                         .foregroundColor(amarilloClaro)
-
+                    
                     Rectangle()
                         .frame(width: 20, height: 90)
                         .foregroundColor(amarilloOscuro)
@@ -46,7 +46,7 @@ struct Tarjeta_Nombre_Amarillo: View {
             .frame(width: 300)
             
         }
-        }
+    }
 }
 
 

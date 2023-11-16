@@ -27,7 +27,7 @@ struct Tarjeta_Acumulado_Hoy: View {
                         .font(.title)
                         .fontWeight(.semibold)
                         .foregroundColor(Color(red: 0.03, green: 0.347, blue: 0.545))
-                     
+                    
                 }
             }
         }
@@ -48,7 +48,7 @@ struct Tarjeta_Acumulado_Hoy: View {
         }
         return total
     }
-
+    
 }
 
 struct Tarjeta_Acumulado_Hoy_Previews: PreviewProvider {

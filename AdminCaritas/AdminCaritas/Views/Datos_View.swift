@@ -13,7 +13,7 @@ struct Datos_View: View {
     let df = DateFormatter()
     var body: some View {
         VStack {
-            Header()
+            //Header()
             HStack{
                 Text("Recolectado")
                     .bold()
