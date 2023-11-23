@@ -24,7 +24,7 @@ struct Lista_Recolectores_View: View {
                     /*NavigationLink(destination: KenyuView(recolector: Repartidor)) {
                         SwiftUIView(recolector: Repartidor)
                     }*/
-                    NavigationLink(destination: KenyuView()){
+                    NavigationLink(destination: Recolectores_View(recolector: Repartidor)){
                         SwiftUIView(recolector: Repartidor)
                     }
                 }.listStyle(InsetListStyle())
