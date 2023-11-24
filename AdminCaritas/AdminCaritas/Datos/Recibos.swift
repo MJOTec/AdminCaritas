@@ -7,12 +7,12 @@
 
 import Foundation
 
-var listaRecibos = getRecibos()
+var listaRecibos = getRecibos(idR: 1)
 
-func getRecibos() -> Array<Recibos>{
+func getRecibos(idR:Int) -> Array<Recibos>{
     var pendientesList: Array<Recibos> = []
     
-    guard let url = URL(string:"http://10.14.255.84:8082/recibosRecolector/1") else {
+    guard let url = URL(string:"http://10.14.255.84:8082/recibosRecolector/\(idR)") else {
         print("No pude asignar el URL del API")
         return pendientesList
     }
@@ -72,7 +72,7 @@ func Actualizar_Recibo(recibo: Actualizar_Recibos, id_bitacora: Int){
     
     let jsonData = try? JSONSerialization.data(withJSONObject: body)
     
-    guard let url = URL(string: "http://10.22.197.45:8082/actualizarRecibo/\(id_bitacora)") else{
+    guard let url = URL(string: "http://10.14.255.84:8082/actualizarRecibo/\(id_bitacora)") else{
         print("No pude asigna el URL del API")
         return
     }
