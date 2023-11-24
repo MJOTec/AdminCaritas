@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct Tarjeta_Acumulado_Reco: View {
-
-    let totalCantidad = 100.0 /*listaRecibos
-            .filter { $0.Estatus == "Cobrado"}
-            .reduce(0) { (result, recibo) in
-                return result + recibo.Importe
-            }*/
+    var recolector: Repartidores
     
     var body: some View {
         VStack{
+            let totalCantidad = listaRecibos
+                .filter { $0.Estatus == "Cobrado" && $0.idRecolector == recolector.id
+                    }
+                    .reduce(0) { (result, recibo) in
+                        return result + recibo.Importe
+                    }
             ZStack{
                 RoundedRectangle(cornerRadius: 10)
-                    .frame(width: 160, height: 90)
+                    .frame(width: 160, height: 110)
                     .foregroundColor(Color(red: 0.95, green: 0.95, blue: 0.96))
                     .shadow(color: .gray, radius: 3, x: 0, y: 2)
                 
@@ -42,6 +43,6 @@ struct Tarjeta_Acumulado_Reco: View {
 
 struct Tarjeta_Acumulado_Reco_Previews: PreviewProvider {
     static var previews: some View {
-        Tarjeta_Acumulado_Reco()
+        Tarjeta_Acumulado_Reco(recolector: Repartidores(id: 1, Nombre: "", ApellidoPaterno: "", ApellidoMaterno: "", EstadoEntrega: ""))
     }
 }
