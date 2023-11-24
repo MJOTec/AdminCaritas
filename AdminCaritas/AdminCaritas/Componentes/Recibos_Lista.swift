@@ -17,7 +17,7 @@ struct Recibos_Lista: View {
                     Tarjeta_Nombre_Verde()
                 }
                 else if(recibo.Estatus == "Pendiente"){
-                    Tarjeta_Nombre_Amarilla()
+                    Tarjeta_Nombre_Amarillo()
                 }
                 
                 else if (recibo.Estatus == "No Cobrado"){
@@ -28,18 +28,10 @@ struct Recibos_Lista: View {
                         .font(.title2)
                         .bold()
                         .frame(width: 310, height: 28, alignment: .leading)
-                    if (recibo.Estatus == "Pendiente"){
-                        Text("\(recibo.Colonia.capitalized), \(recibo.CP)")
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color.gray)
-                            .frame(width: 250, alignment: .leading)
-                    }
-                    else {
-                        Text("\(recibo.Estatus)")
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color.gray)
-                            .frame(width: 250, alignment: .leading)
-                    }
+                    Text("\(recibo.Estatus)")
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color.gray)
+                        .frame(width: 250, alignment: .leading)
                 }
             }
         }
