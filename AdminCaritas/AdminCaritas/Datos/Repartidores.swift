@@ -12,7 +12,7 @@ var listaRepartidores = getRepartidores()
 func getRepartidores() -> Array<Repartidores>{
     var repartidoresList: Array<Repartidores> = []
     
-    guard let url = URL(string:"http://10.22.199.209:8082/recolectores") else {
+    guard let url = URL(string:"http://10.14.255.84:8082/recolectores") else {
         print("No pude asignar el URL del API")
         return repartidoresList
     }
