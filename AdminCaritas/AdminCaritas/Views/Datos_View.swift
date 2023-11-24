@@ -12,7 +12,7 @@ struct Datos_View: View {
     let date = Date()
     let df = DateFormatter()
     var body: some View {
-        VStack {
+        VStack(alignment: .center) {
             Header()
             HStack{
                 Text("Recolectado")
@@ -23,10 +23,17 @@ struct Datos_View: View {
                     .foregroundColor(.gray)
                 Spacer()
             }
-            ChartView()
-            Tarjeta_Esperado()
-            Tarjeta_Acumulado_Hoy()
-            Spacer()
+            
+            List {
+                ChartView()
+                HStack{
+                    Tarjeta_Esperado()
+                    Spacer()
+                    Tarjeta_Acumulado_Hoy()
+                }
+                BarChartView()
+            }
+            .listStyle(.inset)
         }
         .padding()
     }
