@@ -12,7 +12,7 @@ var listaRecibosEstatus = getRecibosEstatus()
 func getRecibosEstatus() -> Array<RecibosEstatus>{
     var ListaRecibos: Array<RecibosEstatus> = []
     
-    guard let url = URL(string:"http://10.22.199.209:8082/recibosEstatus") else {
+    guard let url = URL(string:"http://10.14.255.84:8082/recibosEstatus") else {
         print("No pude asignar el URL del API")
         return ListaRecibos
     }

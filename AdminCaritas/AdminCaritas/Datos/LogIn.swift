@@ -20,7 +20,7 @@ func VerificarUsuario(usr: User) -> Recolector {
     
     let jsonData = try? JSONSerialization.data(withJSONObject: body)
     
-    guard let url = URL(string: "http://10.22.199.209:8082/token") else {
+    guard let url = URL(string: "http://10.14.255.84:8082/token") else {
         print("No pude asignar el URL del API")
         return recolector
     }

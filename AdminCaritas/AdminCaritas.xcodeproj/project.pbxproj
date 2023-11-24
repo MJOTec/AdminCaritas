@@ -32,6 +32,7 @@
 		FB90F5DD2AFB000900B2943A /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB90F5DC2AFB000900B2943A /* ChartView.swift */; };
 		FB90F5DF2AFB058100B2943A /* Tarjeta_Acumulado_Hoy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB90F5DE2AFB058100B2943A /* Tarjeta_Acumulado_Hoy.swift */; };
 		FB90F5E12AFB059F00B2943A /* Tarjeta_Esperado.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB90F5E02AFB059F00B2943A /* Tarjeta_Esperado.swift */; };
+		FB9941292B1019B700BC23C6 /* Tarjeta_Porcentajes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9941282B1019B700BC23C6 /* Tarjeta_Porcentajes.swift */; };
 		FBB21FEE2AFB179000EA809F /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB21FED2AFB179000EA809F /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		FB90F5DC2AFB000900B2943A /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		FB90F5DE2AFB058100B2943A /* Tarjeta_Acumulado_Hoy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tarjeta_Acumulado_Hoy.swift; sourceTree = "<group>"; };
 		FB90F5E02AFB059F00B2943A /* Tarjeta_Esperado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tarjeta_Esperado.swift; sourceTree = "<group>"; };
+		FB9941282B1019B700BC23C6 /* Tarjeta_Porcentajes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tarjeta_Porcentajes.swift; sourceTree = "<group>"; };
 		FBB21FED2AFB179000EA809F /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +129,7 @@
 				FB00857B2AFB2A5100B7392E /* Tarjeta_Nombre_Amarillo.swift */,
 				FB90F5DE2AFB058100B2943A /* Tarjeta_Acumulado_Hoy.swift */,
 				FB90F5E02AFB059F00B2943A /* Tarjeta_Esperado.swift */,
+				FB9941282B1019B700BC23C6 /* Tarjeta_Porcentajes.swift */,
 				FBB21FED2AFB179000EA809F /* SwiftUIView.swift */,
 				FB5B0BBB2AFF081200EEC16E /* Tarjeta_Acumulado_Reco.swift */,
 			);
@@ -250,6 +253,7 @@
 				FB90F5D02AFAF8D500B2943A /* Datos_View.swift in Sources */,
 				FB90F5D82AFAF96000B2943A /* LogIn.swift in Sources */,
 				FB90F5DB2AFAF96000B2943A /* Recibos.swift in Sources */,
+				FB9941292B1019B700BC23C6 /* Tarjeta_Porcentajes.swift in Sources */,
 				FB799C222AFEA42800F9D6D4 /* RecibosEstatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

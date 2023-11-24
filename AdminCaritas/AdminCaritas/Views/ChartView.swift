@@ -120,15 +120,20 @@ struct ChartView: View {
                     }
                     .frame(width: 200, height: 200, alignment: .center)
                     .padding()
-                    
-                    VStack {
-                        ForEach(chartCellModelList) { dataSet in
-                            HStack {
-                                Circle().foregroundColor(dataSet.color)
-                                    .frame(width: 15)
-                                Text("\((dataSet.value/Double(TotalPersonas) * 100), specifier: "%.2f")%").font(.footnote)
+                    HStack{
+                        Spacer()
+                        Tarjeta_Porcentajes()
+                        Spacer()
+                        VStack {
+                            ForEach(chartCellModelList) { dataSet in
+                                HStack {
+                                    Circle().foregroundColor(dataSet.color)
+                                        .frame(width: 15)
+                                    Text("\(Int(dataSet.value))").font(.body)
+                                }
                             }
                         }
+                        Spacer()
                     }
                 }
             }
@@ -137,8 +142,11 @@ struct ChartView: View {
     
     func getRecibos() -> [ChartCellModel] {
         let listaRecibosEstatus = getRecibosEstatus()
-        print(listaRecibosEstatus[0].Total)
-        
+        if !listaRecibosEstatus.isEmpty{
+            print(listaRecibosEstatus[0].Total)
+        } else {
+            print("The array is empty.")
+        }
         // Convierte la lista de RecibosEstatus a la lista de ChartCellModel
         let chartCellModelList: [ChartCellModel] = listaRecibosEstatus.map { recibosEstatus in
             // Define los colores según tus criterios
