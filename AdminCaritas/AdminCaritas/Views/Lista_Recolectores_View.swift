@@ -22,7 +22,7 @@ struct Lista_Recolectores_View: View {
                 VStack{
                     List{
                         ForEach(listaRecolectores) { recolectores in
-                            NavigationLink(destination: KenyuView()){
+                            NavigationLink(destination: Recolectores_View(recolector: recolectores)){
                                 SwiftUIView(recolector: recolectores)
                             }
                         }
