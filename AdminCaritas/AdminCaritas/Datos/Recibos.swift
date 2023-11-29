@@ -7,20 +7,24 @@
 
 import Foundation
 
-var listaRecibos = getRecibos(idR: 1)
+var listaRecibos = getRecibos(idR: 1, token: "")
 
-func getRecibos(idR:Int) -> Array<Recibos>{
+func getRecibos(idR:Int, token: String) -> Array<Recibos>{
     var pendientesList: Array<Recibos> = []
     
-    guard let url = URL(string:"http://10.14.255.84:8082/recibosRecolector/\(idR)") else {
+    guard let url = URL(string:"https://equipo16.tc2007b.tec.mx:8443/recibosRecolector/\(idR)") else {
         print("No pude asignar el URL del API")
         return pendientesList
     }
     
+    var request = URLRequest(url: url)
+    request.httpMethod = "GET"
+    request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+    
     let group = DispatchGroup()
     group.enter()
     
-    let task = URLSession.shared.dataTask(with: url) {
+    let task = URLSession.shared.dataTask(with: request) {
         data, response, error in
         
         let jsonDecoder = JSONDecoder()
@@ -72,7 +76,7 @@ func Actualizar_Recibo(recibo: Actualizar_Recibos, id_bitacora: Int){
     
     let jsonData = try? JSONSerialization.data(withJSONObject: body)
     
-    guard let url = URL(string: "http://10.14.255.84:8082/actualizarRecibo/\(id_bitacora)") else{
+    guard let url = URL(string: "https://equipo16.tc2007b.tec.mx:8443/actualizarRecibo/\(id_bitacora)") else{
         print("No pude asigna el URL del API")
         return
     }

@@ -10,23 +10,24 @@ import CoreMotion
 
 struct ContentView: View {
     //Variable para acceder a los sensores
+    var administrador: Administrador
     let motion = CMMotionManager()
     @State private var accelerometerData: CMAccelerometerData?
     @State private var accelerometerMoved = false
     var body: some View {
         NavigationStack{
             VStack{
-                NavigationLink(destination: LogInView(), isActive: $accelerometerMoved) {
+                NavigationLink(destination: ContentView(administrador: administrador), isActive: $accelerometerMoved) {
                     EmptyView()
                 }
                  
                 .hidden()
                 TabView{
-                    Datos_View()
+                    Datos_View(administrador: administrador)
                         .tabItem{
                             Label("Menu",systemImage: "house.circle")
                         }
-                    Lista_Recolectores_View()
+                    Lista_Recolectores_View(administrador: administrador)
                         .tabItem{
                             Label("Recolectores", systemImage: "figure.walk.circle.fill")
                         }
@@ -72,6 +73,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(administrador: Administrador(access_token: "", token_type: "", idRecolector: 1))
     }
 }

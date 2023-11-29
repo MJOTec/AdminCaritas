@@ -14,7 +14,7 @@ struct SplashScreenView: View {
     
     var body: some View {
         if isActive {
-            LogInView()
+            LogInView(administrador: Administrador(access_token: "", token_type: "", idRecolector: 1))
         }
         else{
             VStack{

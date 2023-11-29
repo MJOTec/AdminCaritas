@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Recibos_Lista: View {
-    @State var recibo: Recibos
+    var recibo: Recibos
     
     var body: some View {
         VStack{
@@ -24,11 +24,11 @@ struct Recibos_Lista: View {
                     Tarjeta_Nombre_Roja()
                 }
                 VStack{
-                    Text("\(recibo.NombreDonante) \(recibo.ApellidoPaterno) ")
+                    Text("   \(recibo.NombreDonante) \(recibo.ApellidoPaterno) ")
                         .font(.title2)
                         .bold()
                         .frame(width: 310, height: 28, alignment: .leading)
-                    Text("\(recibo.Estatus)")
+                    Text("  \(recibo.Estatus)")
                         .fontWeight(.semibold)
                         .foregroundColor(Color.gray)
                         .frame(width: 250, alignment: .leading)

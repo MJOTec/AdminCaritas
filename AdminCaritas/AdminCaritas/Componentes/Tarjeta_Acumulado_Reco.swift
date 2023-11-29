@@ -9,10 +9,13 @@ import SwiftUI
 
 struct Tarjeta_Acumulado_Reco: View {
     var recolector: Repartidores
+    var administrador: Administrador
     
     var body: some View {
         VStack{
-            let totalCantidad = listaRecibos
+            var listaRecibos2 = getRecibos(idR: recolector.id, token: administrador.access_token)
+            
+            var totalCantidad = listaRecibos2
                 .filter { $0.Estatus == "Cobrado" && $0.idRecolector == recolector.id
                     }
                     .reduce(0) { (result, recibo) in
@@ -43,6 +46,6 @@ struct Tarjeta_Acumulado_Reco: View {
 
 struct Tarjeta_Acumulado_Reco_Previews: PreviewProvider {
     static var previews: some View {
-        Tarjeta_Acumulado_Reco(recolector: Repartidores(id: 1, Nombre: "", ApellidoPaterno: "", ApellidoMaterno: "", EstadoEntrega: ""))
+        Tarjeta_Acumulado_Reco(recolector: Repartidores(id: 1, Nombre: "", ApellidoPaterno: "", ApellidoMaterno: "", EstadoEntrega: ""), administrador: Administrador(access_token: "", token_type: "", idRecolector: 1))
     }
 }

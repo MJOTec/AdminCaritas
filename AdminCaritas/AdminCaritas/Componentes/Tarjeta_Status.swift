@@ -7,7 +7,7 @@
 
 import SwiftUI
 struct Tarjeta_Status: View {
-    @State var repatidor: Repartidores
+    var repatidor: Repartidores
     
     var body: some View {
         VStack{

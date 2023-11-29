@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Tarjeta_Esperado: View {
     @State var totalCantidad: Float = 0.0
+    var administrador: Administrador
     
     var body: some View {
         VStack {
@@ -36,7 +37,7 @@ struct Tarjeta_Esperado: View {
     }
     
     func getTotalDineroEsperado() -> Float {
-        let listaRecibosEstatus = getRecibosEstatus()
+        let listaRecibosEstatus = getRecibosEstatus(token: administrador.access_token)
         
         let total = listaRecibosEstatus.reduce(0) { (result, recibosEstatus) in
             return result + Float(recibosEstatus.Total)
@@ -48,6 +49,6 @@ struct Tarjeta_Esperado: View {
 
 struct Tarjeta_Esperado_Previews: PreviewProvider {
     static var previews: some View {
-        Tarjeta_Esperado()
+        Tarjeta_Esperado(administrador: Administrador(access_token: "", token_type: "", idRecolector: 1))
     }
 }

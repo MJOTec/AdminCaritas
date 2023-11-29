@@ -7,7 +7,7 @@
 
 import Foundation
 
-func VerificarUsuario(usr: User) -> Recolector {
+func VerificarUsuario(usr: User) -> Administrador {
     
     let body: [String: Any] = [
         "username": usr.username,
@@ -15,12 +15,12 @@ func VerificarUsuario(usr: User) -> Recolector {
     ]
     
     // Inicializa recolector
-    var recolector = Recolector(access_token: "", token_type: "", idRecolector: 0)
+    var recolector = Administrador(access_token: "", token_type: "", idRecolector: 0)
     
     
     let jsonData = try? JSONSerialization.data(withJSONObject: body)
     
-    guard let url = URL(string: "http://10.14.255.84:8082/token") else {
+    guard let url = URL(string: "https://equipo16.tc2007b.tec.mx:8443/token") else {
         print("No pude asignar el URL del API")
         return recolector
     }
@@ -40,7 +40,7 @@ func VerificarUsuario(usr: User) -> Recolector {
         if let data = data {
             let decoder = JSONDecoder()
             do {
-                let recolectorResponse = try decoder.decode(Recolector.self, from: data)
+                let recolectorResponse = try decoder.decode(Administrador.self, from: data)
                 print("*************** Respuesta *****************")
                 print(recolectorResponse)
                 recolector = recolectorResponse // Asigna la respuesta al recolector
@@ -60,7 +60,7 @@ func VerificarUsuario(usr: User) -> Recolector {
 }
 
 
-struct Recolector: Codable {
+struct Administrador: Codable {
     var access_token: String
     var token_type: String
     var idRecolector: Int

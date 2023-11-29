@@ -9,6 +9,7 @@ import SwiftUI
 import Charts
 
 struct BarChartView: View {
+    var administrador: Administrador
     @State var recibosNoCobrados: Array<recibosComentarios> = []
     var body: some View {
         VStack{
@@ -22,7 +23,7 @@ struct BarChartView: View {
             }
         }
             .onAppear() {
-                recibosNoCobrados = getRecibosNoCobradosComentarios()
+                recibosNoCobrados = getRecibosNoCobradosComentarios(token: administrador.access_token)
             }
     }
     
@@ -30,6 +31,6 @@ struct BarChartView: View {
 
 struct BarChartView_Previews: PreviewProvider {
     static var previews: some View {
-        BarChartView()
+        BarChartView(administrador: Administrador(access_token: "", token_type: "", idRecolector: 1))
     }
 }

@@ -52,12 +52,13 @@ struct InnerCircle: Shape {
 
 struct DonutChart: View {
     @State private var selectedCell: UUID = UUID()
+    var administrador: Administrador
     
     let dataModel: ChartDataModel
     let onTap: (ChartCellModel?) -> ()
     var body: some View {
         ZStack {
-            PieChart(dataModel: dataModel, onTap: onTap)
+            PieChart(administrador: administrador, dataModel: dataModel, onTap: onTap)
             InnerCircle(ratio: 2/3).foregroundColor(.white)
             VStack {
                 ForEach(sample) { dataSet in
@@ -74,7 +75,7 @@ struct DonutChart: View {
 
 struct PieChart: View {
     @State private var selectedCell: UUID = UUID()
-    
+    var administrador: Administrador
     let dataModel: ChartDataModel
     let onTap: (ChartCellModel?) -> ()
     
@@ -103,11 +104,12 @@ struct ChartView: View {
     @State private var selectedDonut: String = ""
     @State private var chartCellModelList: [ChartCellModel] = []
     @State private var TotalPersonas: Int = 0
+    var administrador: Administrador
     var body: some View {
         ScrollView {
             VStack {
                 VStack {
-                    DonutChart(dataModel: ChartDataModel(dataModel: chartCellModelList), onTap: { dataModel in
+                    DonutChart(administrador: administrador, dataModel: ChartDataModel(dataModel: chartCellModelList), onTap: { dataModel in
                         if let dataModel = dataModel {
                             self.selectedDonut = "Estatus: \(dataModel.name)\nPorcentaje: \(Int(dataModel.value))%"
                         } else {
@@ -122,7 +124,7 @@ struct ChartView: View {
                     .padding()
                     HStack{
                         Spacer()
-                        Tarjeta_Porcentajes()
+                        Tarjeta_Porcentajes(administrador: administrador)
                         Spacer()
                         VStack {
                             ForEach(chartCellModelList) { dataSet in
@@ -141,7 +143,7 @@ struct ChartView: View {
     }
     
     func getRecibos() -> [ChartCellModel] {
-        let listaRecibosEstatus = getRecibosEstatus()
+        let listaRecibosEstatus = getRecibosEstatus(token: administrador.access_token)
         if !listaRecibosEstatus.isEmpty{
             print(listaRecibosEstatus[0].Total)
         } else {
@@ -170,24 +172,24 @@ struct ChartView: View {
         
         return chartCellModelList
     }
-}
-
-func getTotalRecibos() -> Int {
-    let listaRecibosEstatus = getRecibosEstatus()
     
-    let total = listaRecibosEstatus.reduce(0) { (result, recibosEstatus) in
-        return result + recibosEstatus.Cantidad
+    func getTotalRecibos() -> Int {
+        let listaRecibosEstatus = getRecibosEstatus(token: administrador.access_token)
+        
+        let total = listaRecibosEstatus.reduce(0) { (result, recibosEstatus) in
+            return result + recibosEstatus.Cantidad
+        }
+        
+        return total
     }
-    
-    return total
-}
 
+}
 
 
 
 struct PieChart_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(administrador: Administrador(access_token: "", token_type: "", idRecolector: 1))
     }
 }
 
@@ -228,6 +230,5 @@ final class ChartDataModel: ObservableObject {
 let sample = [ ChartCellModel(color: Color.yellow, value: 50, name: "Pendiente"),
                ChartCellModel(color: Color.red, value: 20, name: "No cobrado"),
                ChartCellModel(color: Color.green, value: 55, name: "Cobrado")]
-
 
 

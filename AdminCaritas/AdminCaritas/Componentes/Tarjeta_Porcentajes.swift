@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Tarjeta_Porcentajes: View {
     @State var totalCantidad : Float = 0.0
+    var administrador: Administrador
     
     var body: some View {
         VStack {
@@ -32,15 +33,24 @@ struct Tarjeta_Porcentajes: View {
                 }
             }
         }.onAppear {
-            totalCantidad = Float(getTotalRecibos())
+            totalCantidad = Float(getTotalRecibos2())
         }
+    }
+    
+    func getTotalRecibos2() -> Int {
+        let listaRecibosEstatus = getRecibosEstatus(token: administrador.access_token)
+        
+        let total = listaRecibosEstatus.reduce(0) { (result, recibosEstatus) in
+            return result + recibosEstatus.Cantidad
+        }
+        
+        return total
     }
 }
 
 
 struct Tarjeta_Porcentajes_Previews : PreviewProvider {
     static var previews: some View {
-        Tarjeta_Porcentajes()
+        Tarjeta_Porcentajes(administrador: Administrador(access_token: "", token_type: "", idRecolector: 1))
     }
 }
-

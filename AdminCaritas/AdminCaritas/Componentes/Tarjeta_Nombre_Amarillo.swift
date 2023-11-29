@@ -16,7 +16,7 @@ struct Tarjeta_Nombre_Amarillo: View {
         VStack{
             ZStack{
                 RoundedRectangle(cornerRadius: 10)
-                    .frame(width: 333, height: 90)
+                    .frame(width: 315, height: 90)
                     .foregroundColor(Color(red: 0.95, green: 0.95, blue: 0.96))
                     .shadow(color: .gray, radius: 3, x: 0, y: 2)
                 
@@ -30,7 +30,7 @@ struct Tarjeta_Nombre_Amarillo: View {
                     
                     
                     Rectangle()
-                        .frame(width: 235, height: 0)
+                        .frame(width: 220, height: 0)
                         .foregroundColor(.clear)
                     
                     Rectangle()
@@ -43,7 +43,7 @@ struct Tarjeta_Nombre_Amarillo: View {
                     Spacer()
                 }
             }
-            .frame(width: 300)
+            .frame(width: 250)
             
         }
     }

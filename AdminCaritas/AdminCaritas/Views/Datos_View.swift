@@ -11,13 +11,14 @@ import Foundation
 struct Datos_View: View {
     let date = Date()
     let df = DateFormatter()
+    var administrador: Administrador
     var body: some View {
         VStack(alignment: .center) {
             Header()
             HStack{
                 Text("Recolectado")
                     .bold()
-                    .font(.largeTitle)
+                    .font(.title2)
                 Spacer()
                 Text("\(date.formatted(.dateTime.day().month().year().hour().minute()))")
                     .foregroundColor(.gray)
@@ -25,13 +26,15 @@ struct Datos_View: View {
             }
             
             List {
-                ChartView()
-                HStack{
-                    Tarjeta_Esperado()
+                ChartView(administrador: administrador)
+                VStack{
                     Spacer()
-                    Tarjeta_Acumulado_Hoy()
+                    Tarjeta_Esperado(administrador: administrador)
+                    Tarjeta_Acumulado_Hoy(administrador: administrador)
+                    Spacer()
                 }
-                BarChartView()
+                .frame(width: 333, alignment: .center)
+                BarChartView(administrador: administrador)
             }
             .listStyle(.inset)
         }
@@ -41,6 +44,6 @@ struct Datos_View: View {
 
 struct Datos_View_Previews: PreviewProvider {
     static var previews: some View {
-        Datos_View()
+        Datos_View(administrador: Administrador(access_token: "", token_type: "", idRecolector: 1))
     }
 }

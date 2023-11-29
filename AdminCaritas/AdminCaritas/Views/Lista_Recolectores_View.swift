@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Lista_Recolectores_View: View {
     @State var listaRecolectores: Array<Repartidores> = []
+    var administrador: Administrador
     
     var body: some View {
         
@@ -22,7 +23,7 @@ struct Lista_Recolectores_View: View {
                 VStack{
                     List{
                         ForEach(listaRecolectores) { recolectores in
-                            NavigationLink(destination: Recolectores_View(recolector: recolectores)){
+                            NavigationLink(destination: Recolectores_View(recolector: recolectores, administrador: administrador)){
                                 SwiftUIView(recolector: recolectores)
                             }
                         }
@@ -30,7 +31,7 @@ struct Lista_Recolectores_View: View {
                     Spacer()
                 }
                 .onAppear(){
-                    listaRecolectores = getRepartidores()
+                    listaRecolectores = getRepartidores(token: administrador.access_token)
                 }
                 
             }
@@ -45,6 +46,6 @@ struct Lista_Recolectores_View: View {
 
 struct Lista_Recolectores_View_Previews: PreviewProvider {
     static var previews: some View {
-        Lista_Recolectores_View()
+        Lista_Recolectores_View(administrador: Administrador(access_token: "", token_type: "", idRecolector: 1))
     }
 }
